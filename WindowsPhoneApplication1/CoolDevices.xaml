@@ -1,0 +1,44 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhoneApplication1.CoolDevices"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" 
+    xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps">
+    
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="Fun App">
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Map">
+                <Grid x:Name="ContentPanel2" Grid.Row="1" Margin="12,0,12,0">
+<!--
+                    <my:Map Height="570" HorizontalAlignment="Left" Margin="15,1,0,0" Name="BingMapControl" VerticalAlignment="Top" Width="435" CredentialsProvider="AunOt1ybpXnY-C5yEIVXPmxw7nZ-twll9ePbtKMMH2QoBHZahz_WinxxtMTX6woD" ZoomLevel="5"/>
+                    -->
+                    <my:Map HorizontalAlignment="Left" Name="BingMapControl" Width="435" CredentialsProvider="AunOt1ybpXnY-C5yEIVXPmxw7nZ-twll9ePbtKMMH2QoBHZahz_WinxxtMTX6woD" ZoomLevel="3"/>
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem Header="Readings">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                    <ListBox Height="332" HorizontalAlignment="Left" Margin="22,13,0,0" Name="MyListBox" VerticalAlignment="Top" Width="360" />
+                </Grid>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>

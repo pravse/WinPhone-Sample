@@ -1,0 +1,45 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WindowsPhoneApplication1.CameraPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama Title="Fun App" FontSize="10">
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="Snap">
+                <Grid>
+                    <Image Name="BackdropImage" Source="Vishnu.jun2004.jpg" Margin="0,-37,0,0"></Image>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="21,434,0,0" Name="CameraFailedTextBlock" Text="Failed to choose image" VerticalAlignment="Top" Width="376" FontSize="16" Visibility="Collapsed" />
+                    <!-- <TextBlock Height="70" HorizontalAlignment="Left" Margin="67,167,0,0" Name="textBlock1" Text="DUMMY" VerticalAlignment="Top" Width="269" FontSize="22" />
+                    -->
+                </Grid>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.5">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.camera.rest.png" Text="Take Photo" Click="TakePhotoButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.folder.rest.png" Text="Browse Photos" Click="ChoosePhotoButton_Click" />
+            <!-- <shell:ApplicationBarIconButton IconUri="/Images/appbar.next.rest.png" Text="Next" Click="NextPageButton_Click" />
+            -->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
